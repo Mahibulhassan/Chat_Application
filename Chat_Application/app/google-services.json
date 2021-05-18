@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "772145528336",
+    "project_id": "chat-application-8e071",
+    "storage_bucket": "chat-application-8e071.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772145528336:android:995d82360d0f5306cad495",
+        "android_client_info": {
+          "package_name": "com.mahibul.chat_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772145528336-0c42eq0p2kh1qdt8v52ousbruh8j9g7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQtaVKVlJucTyzQb65DiATgIsa4I6lfp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772145528336-0c42eq0p2kh1qdt8v52ousbruh8j9g7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

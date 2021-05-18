@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.mahibul.chat_application">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chat_Application">
-        <activity android:name=".Ui.Register.View.RegisterActivity"></activity>
+        <activity android:name=".Ui.chatPage.view.ChatActivity"></activity>
+        <activity android:name=".Ui.RegisterAndLogin.View.LoginActivity" />
+        <activity android:name=".Ui.RegisterAndLogin.View.RegisterActivity" />
         <activity android:name=".Ui.Home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

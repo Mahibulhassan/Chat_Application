@@ -4,39 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ui.RegisterAndLogin.View.RegisterActivity">
+    tools:context=".Ui.RegisterAndLogin.View.LoginActivity">
 
     <include
-        android:id="@+id/toolbar"
         layout="@layout/toolbar_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_showtext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Create a new Account"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:ignore="MissingConstraints" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="User Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_showtext"
-        tools:ignore="MissingConstraints" />
+        android:id="@+id/toolbar"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edt_email"
@@ -46,7 +18,7 @@
         android:hint="Enter Your Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_username"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -61,16 +33,15 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Register"
+        android:text="Login"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_password"
         tools:ignore="MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
