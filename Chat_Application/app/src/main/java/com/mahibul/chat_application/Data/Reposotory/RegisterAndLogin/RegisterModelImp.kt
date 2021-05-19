@@ -17,7 +17,7 @@ class RegisterModelImp : RegisterModel {
                val user = auth.currentUser
                val user_id = user?.uid
 
-               val db = FirebaseDatabase.getInstance().getReference("user").child("user_id")
+               val db = FirebaseDatabase.getInstance().getReference("user").child(user_id!!)
                val userdef= user_id?.let { it1 -> DatabaseData(it1,registerData.user_name,"default") }
                db.setValue(userdef).addOnCompleteListener {
                    if (it.isSuccessful){
