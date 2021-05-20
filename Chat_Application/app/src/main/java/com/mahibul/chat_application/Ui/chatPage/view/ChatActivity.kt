@@ -2,18 +2,17 @@ package com.mahibul.chat_application.Ui.chatPage.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseRetriveData
 import com.mahibul.chat_application.R
 import com.mahibul.chat_application.Ui.Home.MainActivity
+import com.mahibul.chat_application.Ui.chatPage.Fragments.ChatsFragment
+import com.mahibul.chat_application.Ui.chatPage.Fragments.UsersFragment
 import com.mahibul.chat_application.Ui.chatPage.viewModel.ChatViewModel
 import com.mahibul.chat_application.core.BaseActivity
 import kotlinx.android.synthetic.main.activity_chat.*
@@ -33,6 +32,15 @@ class ChatActivity : BaseActivity(),ChatNotifyDataChange {
             startActivity(Intent(this,MainActivity::class.java))
             finish()
         }
+      //View Pager Adapter
+
+        val viewpager = viewpager_id
+        val viewPagerAdapter = viewPagerAdapter(supportFragmentManager)
+        viewPagerAdapter.addFragment(ChatsFragment(),"Chats")
+        viewPagerAdapter.addFragment(UsersFragment(),"Users")
+
+        viewpager.adapter = viewPagerAdapter
+        tablelayout_id.setupWithViewPager(viewpager)
     }
 
     override fun userData(databaseRetriveData: DatabaseRetriveData) {
@@ -48,5 +56,5 @@ class ChatActivity : BaseActivity(),ChatNotifyDataChange {
     override fun errMsg(errorMsg: String) {
         showToast(errorMsg)
     }
-
+    
 }
