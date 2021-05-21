@@ -1,4 +1,4 @@
-package com.mahibul.chat_application.Ui.chatPage.view
+package com.mahibul.chat_application.Ui.chatPage.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

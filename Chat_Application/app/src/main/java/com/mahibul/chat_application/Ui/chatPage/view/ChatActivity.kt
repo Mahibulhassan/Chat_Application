@@ -3,14 +3,12 @@ package com.mahibul.chat_application.Ui.chatPage.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseRetriveData
 import com.mahibul.chat_application.R
 import com.mahibul.chat_application.Ui.Home.MainActivity
+import com.mahibul.chat_application.Ui.chatPage.Adapter.viewPagerAdapter
 import com.mahibul.chat_application.Ui.chatPage.Fragments.ChatsFragment
 import com.mahibul.chat_application.Ui.chatPage.Fragments.UsersFragment
 import com.mahibul.chat_application.Ui.chatPage.viewModel.ChatViewModel
