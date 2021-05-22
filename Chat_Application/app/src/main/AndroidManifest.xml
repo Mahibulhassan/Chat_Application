@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chat_Application">
+        <activity android:name=".Ui.chatPage.view.MessageActivity"></activity>
         <activity
             android:name=".Ui.chatPage.view.ChatActivity"
             android:screenOrientation="portrait" />

@@ -8,7 +8,8 @@ import com.bumptech.glide.Glide
 import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseRetriveData
 import com.mahibul.chat_application.R
 
-class UserAdapter(private val context: Context,private val users : MutableList<DatabaseRetriveData>) : RecyclerView.Adapter<ViewHolder>() {
+class UserAdapter(private val context: Context,private val users : MutableList<DatabaseRetriveData>,
+private val clickListner : UserAdapter.userClickListner): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =LayoutInflater.from(context).inflate(R.layout.user_item_layout,parent,false)
@@ -23,9 +24,17 @@ class UserAdapter(private val context: Context,private val users : MutableList<D
         }else{
             Glide.with(context).load(user.image_url).into(holder.image_view)
         }
+
+        holder.itemView.setOnClickListener {
+            clickListner.onUserClick(user.id)
+        }
     }
 
     override fun getItemCount(): Int {
         return users.size
+    }
+
+    interface userClickListner {
+        fun onUserClick (user_id : String)
     }
 }
