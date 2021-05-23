@@ -26,6 +26,17 @@ class MessageActivity : BaseActivity(),MessageDataChange {
         val user_id = intent.getStringExtra("user_id")
         viewMOdel.getUserInfo(user_id!!)
 
+        //Sending msg to target user
+        btn_send.setOnClickListener {
+            val msg = text_sendid.text.toString()
+            if (msg.equals("")) {
+                showToast("Blank sms cann't be change")
+            } else {
+                viewMOdel.sendMsg(user_id!!, msg)
+            }
+            text_sendid.setText("")
+        }
+
     }
 
     override fun userData(databaseRetriveData: DatabaseRetriveData) {

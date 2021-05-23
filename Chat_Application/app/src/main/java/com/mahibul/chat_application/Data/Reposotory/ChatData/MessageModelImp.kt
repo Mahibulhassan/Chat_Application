@@ -1,6 +1,8 @@
 package com.mahibul.chat_application.Data.Reposotory.ChatData
 
 import android.util.Log
+import com.google.firebase.FirebaseApiNotAvailableException
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -22,6 +24,12 @@ class MessageModelImp() : MessageModel {
             }
 
         })
+    }
+
+    override fun sendMsg(reciver_id: String, msg: String) {
+        val sender_id = FirebaseAuth.getInstance().currentUser!!.uid!!
+        val db = FirebaseDatabase.getInstance().getReference()
+        db.child("Chats").push().setValue(SendMsgDataClass(sender_id,reciver_id,msg))
     }
 
 }

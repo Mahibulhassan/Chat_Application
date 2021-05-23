@@ -20,4 +20,8 @@ class MessageViewModel(private val view : MessageDataChange) {
             }
         })
     }
+
+    fun sendMsg(receber_id : String,msg : String){
+        model.sendMsg(receber_id,msg)
+    }
 }

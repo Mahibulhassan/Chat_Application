@@ -4,4 +4,5 @@ import com.mahibul.chat_application.core.DataFatchCallback
 
 interface MessageModel {
     fun getUserInfo(user_id : String,callback: DataFatchCallback<DatabaseRetriveData>)
+    fun sendMsg (reciver_id :String,msg : String)
 }
