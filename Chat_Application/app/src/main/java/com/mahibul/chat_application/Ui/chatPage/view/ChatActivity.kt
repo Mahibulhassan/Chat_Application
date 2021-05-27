@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseRetriveData
+import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseUserRetriveData
 import com.mahibul.chat_application.R
 import com.mahibul.chat_application.Ui.Home.MainActivity
 import com.mahibul.chat_application.Ui.chatPage.Adapter.viewPagerAdapter
@@ -41,12 +41,12 @@ class ChatActivity : BaseActivity(),ChatNotifyDataChange {
         tablelayout_id.setupWithViewPager(viewpager)
     }
 
-    override fun userData(databaseRetriveData: DatabaseRetriveData) {
-        user_id.text = databaseRetriveData.user_name
-        if (databaseRetriveData.image_url == "default"){
+    override fun userData(databaseUserRetriveData: DatabaseUserRetriveData) {
+        user_id.text = databaseUserRetriveData.user_name
+        if (databaseUserRetriveData.image_url == "default"){
             profile_image.setImageResource(R.mipmap.ic_launcher)
         }else{
-            Glide.with(this@ChatActivity).load(databaseRetriveData.image_url).into(profile_image)
+            Glide.with(this@ChatActivity).load(databaseUserRetriveData.image_url).into(profile_image)
         }
         logout_id.visibility = View.VISIBLE
     }

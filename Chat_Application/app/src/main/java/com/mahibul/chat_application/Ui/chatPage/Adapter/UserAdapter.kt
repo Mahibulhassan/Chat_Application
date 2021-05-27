@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseRetriveData
+import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseUserRetriveData
 import com.mahibul.chat_application.R
 
-class UserAdapter(private val context: Context,private val users : MutableList<DatabaseRetriveData>,
-private val clickListner : UserAdapter.userClickListner): RecyclerView.Adapter<ViewHolder>() {
+class UserAdapter(private val context: Context, private val users : MutableList<DatabaseUserRetriveData>,
+                  private val clickListner : UserAdapter.userClickListner): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =LayoutInflater.from(context).inflate(R.layout.user_item_layout,parent,false)

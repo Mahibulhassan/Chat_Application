@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseRetriveData
+import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseUserRetriveData
 import com.mahibul.chat_application.R
 import com.mahibul.chat_application.Ui.chatPage.Adapter.UserAdapter
 import com.mahibul.chat_application.Ui.chatPage.view.MessageActivity
@@ -33,8 +32,8 @@ class UsersFragment : Fragment(),UsersDataChange,UserAdapter.userClickListner{
 
     }
 
-    override fun userData(databaseRetriveData: MutableList<DatabaseRetriveData>) {
-        val adapter = UserAdapter(requireContext(),databaseRetriveData,this)
+    override fun userData(databaseUserRetriveData: MutableList<DatabaseUserRetriveData>) {
+        val adapter = UserAdapter(requireContext(),databaseUserRetriveData,this)
 
         user_recyclerView_id.setHasFixedSize(true)
         user_recyclerView_id.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)

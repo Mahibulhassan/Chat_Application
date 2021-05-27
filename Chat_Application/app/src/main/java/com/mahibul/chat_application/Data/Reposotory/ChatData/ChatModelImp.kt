@@ -9,13 +9,13 @@ import com.mahibul.chat_application.core.DataFatchCallback
 
 
 class ChatModelImp:ChatModel {
-    override fun UserData(callback: DataFatchCallback<DatabaseRetriveData>) {
+    override fun UserData(callback: DataFatchCallback<DatabaseUserRetriveData>) {
         val firebaseUser = FirebaseAuth.getInstance().currentUser
         val db = FirebaseDatabase.getInstance().getReference("user").child(firebaseUser?.uid!!)
 
         db.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val userData = snapshot.getValue(DatabaseRetriveData::class.java)
+                val userData = snapshot.getValue(DatabaseUserRetriveData::class.java)
                 callback.onSuccess(userData!!)
             }
 

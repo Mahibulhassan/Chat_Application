@@ -1,6 +1,5 @@
 package com.mahibul.chat_application.Data.Reposotory.ChatData
 
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -9,14 +8,14 @@ import com.mahibul.chat_application.core.DataFatchCallback
 
 class UserMOdelImp : UserModel {
 
-    override fun usersData(callback: DataFatchCallback<MutableList<DatabaseRetriveData>>) {
+    override fun usersData(callback: DataFatchCallback<MutableList<DatabaseUserRetriveData>>) {
      //   val firebaseUser = FirebaseAuth.getInstance().currentUser
         val db = FirebaseDatabase.getInstance().getReference("user")
         db.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val users = mutableListOf<DatabaseRetriveData>()
+                val users = mutableListOf<DatabaseUserRetriveData>()
                 for (i in snapshot.children){
-                    val user = i.getValue(DatabaseRetriveData::class.java)
+                    val user = i.getValue(DatabaseUserRetriveData::class.java)
 
                     /*if (user!!.id.equals(firebaseUser!!.uid!!)){
                         users.add(user!!)
