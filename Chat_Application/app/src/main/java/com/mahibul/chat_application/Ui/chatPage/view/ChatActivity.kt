@@ -9,7 +9,7 @@ import com.mahibul.chat_application.Data.Reposotory.ChatData.DatabaseUserRetrive
 import com.mahibul.chat_application.R
 import com.mahibul.chat_application.Ui.Home.MainActivity
 import com.mahibul.chat_application.Ui.chatPage.Adapter.viewPagerAdapter
-import com.mahibul.chat_application.Ui.chatPage.Fragments.ChatsFragment
+import com.mahibul.chat_application.Ui.chatPage.Fragments.ProfileFragment
 import com.mahibul.chat_application.Ui.chatPage.Fragments.UsersFragment
 import com.mahibul.chat_application.Ui.chatPage.viewModel.ChatViewModel
 import com.mahibul.chat_application.core.BaseActivity
@@ -34,8 +34,8 @@ class ChatActivity : BaseActivity(),ChatNotifyDataChange {
 
         val viewpager = viewpager_id
         val viewPagerAdapter = viewPagerAdapter(supportFragmentManager)
-        viewPagerAdapter.addFragment(ChatsFragment(),"Chats")
         viewPagerAdapter.addFragment(UsersFragment(),"Users")
+        viewPagerAdapter.addFragment(ProfileFragment(),"Profile")
 
         viewpager.adapter = viewPagerAdapter
         tablelayout_id.setupWithViewPager(viewpager)
